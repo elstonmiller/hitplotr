@@ -1,0 +1,15 @@
+Package: hitplotr
+Title: Plots season long summary of offensive baseball performance
+Version: 0.0.0.9000
+Authors@R: 
+    person("Elston", "Miller", email =  "elstonmiller@usf.edu", role = c("aut", "cre"))
+Description: Calculates, summarizes, and visualizes offensive baseball performance in youth/recreational leagues where infrastructure may not exist. It can handle wither long-format game-by-game data or season totals. 
+Depends: R (>= 3.1.2)
+Imports: ggplot2, dplyr, tidyr, flexdashboard
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+LazyData: true
+URL:
+BugReports:
