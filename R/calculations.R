@@ -79,3 +79,96 @@ slg <- function(df) {
   return(df)
 }
 
+#' OPS
+#'
+#' @param df dataframe containing season totals "obp" & "slg"
+#'
+#' @return new column containing "ops".
+#'
+#' @examples
+#' ops(playerSample)
+#'
+#' @export
+
+ops <- function(df) {
+  df$ops <- round(df$obp + df$slg, 3)
+  return(df)
+}
+
+#' Stolen Base %
+#'
+#' @param df dataframe containing season totals "sb" & "cs"
+#'
+#' @return new column containing "sbp".
+#'
+#' @examples
+#' sb_pct(playerSample)
+#'
+#' @export
+
+sb_pct <- function(df) {
+  df$sb_pct <- round(df$sb / (df$sb + df$cs), 3)
+  return(df)
+}
+
+#' Walk Rate (BB%)
+#'
+#' @param df dataframe containing season totals "pa" & "bb"
+#'
+#' @return new column containing "bb_pct".
+#'
+#' @examples
+#' bb_pct(playerSample)
+#'
+#' @export
+
+bb_pct <- function(df) {
+  df$bb_pct <- round(df$bb / df$pa, 3)
+  return(df)
+}
+
+#' Strikeout Rate (K%)
+#'
+#' @param df dataframe containing season totals "k" & "bb"
+#'
+#' @return new column containing "k_pct".
+#'
+#' @examples
+#' k_pct(playerSample)
+#'
+#' @export
+
+k_pct <- function(df) {
+  df$k_pct <- round(df$k / df$pa, 3)
+  return(df)
+}
+
+#' Season Totals
+#'
+#' @param df dataframe containing game by game stats.
+#'
+#' @return new dataframe containing a season summary.
+#'
+#' @examples
+#' season_summary(playerSample)
+#'
+#' @export
+
+season_summary <- function(df) {
+  # calculate season totals
+  df <- season_totals(df)
+  # create summary stats
+  df <- avg(df)
+  df <- obp(df)
+  df <- slg(df)
+  df <- ops(df)
+  df <- bb_pct(df)
+  df <- k_pct(df)
+  df <- sb_pct(df)
+  # isolate desired columns
+  df <- df[, c("games","pa","ab","h","ba","obp","slg","ops","rbi","r","hr","bb_pct","k_pct","sb","sb_pct")]
+  return(df)
+}
+
+
+
