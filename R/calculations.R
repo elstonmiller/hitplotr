@@ -86,7 +86,10 @@ slg <- function(df) {
 #' @return new column containing "ops".
 #'
 #' @examples
-#' ops(playerSample)
+#' df <- playerSample
+#' df <- obp(df)
+#' df <- slg(df)
+#' ops(df)
 #'
 #' @export
 
