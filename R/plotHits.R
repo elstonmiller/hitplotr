@@ -1,4 +1,14 @@
-
+#' Main Plotting Function
+#'
+#' @param df dataframe containing game by game player data in the same format as [playerSample]
+#'
+#' @return a shiny app with summarized statistics organized in a table and an interactive cumulative plot.
+#'
+#' @examples
+#' \dontrun{
+#' plotHits(playerSample)}
+#'
+#' @export
 plotHits <- function(df) {
   # Define UI for application that draws a histogram
   ui <- shiny::fluidPage(
