@@ -167,8 +167,24 @@ season_summary <- function(df) {
   df <- sb_pct(df)
   # isolate desired columns
   df <- df[, c("games","pa","ab","h","ba","obp","slg","ops","rbi","r","hr","bb_pct","k_pct","sb","sb_pct")]
+  cnames <- c("Games Played", "Plate Appearences", "At-Bats", "Hits", "AVG", "OBP", "SLG", "OPS", "RBI", "Runs", "Homeruns", "Walk Rate", "K Rate", "Stolen Bases", "Stolen Base Rate")
+  colnames(df) <- cnames
   return(df)
 }
 
-
+#' Table workflow
+#'
+#' @param df dataframe containing game by game stats ideally identical in form to [playerSample].
+#'
+#' @return dataframe containing a season summary.
+#'
+#' @examples
+#' makeTable(playerSample)
+#'
+#' @export
+makeTable <- function(df) {
+  df <- standardize_names(df)
+  df <- season_summary(df)
+  return(df)
+}
 
