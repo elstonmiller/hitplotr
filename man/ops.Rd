@@ -16,6 +16,9 @@ new column containing "ops".
 OPS
 }
 \examples{
-ops(playerSample)
+df <- playerSample
+df <- obp(df)
+df <- slg(df)
+ops(df)
 
 }
