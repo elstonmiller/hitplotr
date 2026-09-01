@@ -67,6 +67,9 @@ Visualization
         ↓
 Interactive Shiny application
 ```
+## Demo
+
+![HitPlotR Shiny App Demo](HitPlotR_Shiny_Walkthrough.gif)
 
 ## Documentation
 
