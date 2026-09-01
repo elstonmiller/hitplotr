@@ -96,4 +96,5 @@ HitPlotR was built using:
 
 Developed by **Elston Miller**.
 
-For a visual overview of the project, including a demonstration of the Shiny application, visit the HitPlotR project on my portfolio.
+For a visual overview of the project, visit the HitPlotR project on my portfolio.
+https://elstonmiller.wordpress.com/ 
